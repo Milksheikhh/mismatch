@@ -32,4 +32,5 @@ optical AutonOpticalSensor(PORT19);
 std::string Team = "blue";
 bool Wing = false;
 bool Scraper = false;
-bool Auton = true;
+bool Auton = false;
+bool AutonOutake = false;
