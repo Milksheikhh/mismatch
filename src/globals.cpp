@@ -34,3 +34,4 @@ bool Wing = false;
 bool Scraper = false;
 bool Auton = false;
 bool AutonOutake = false;
+int AutonRout = 1;

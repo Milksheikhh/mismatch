@@ -9,6 +9,7 @@ extern void wing();
 extern void scraper();
 extern void autonRoutine();
 extern void initializeRandomSeed();
+extern void autonSelection();
 
 extern motor L1, L2, L3, R1, R2, R3, Intake, Outake;
 extern controller controller_1;
@@ -23,6 +24,7 @@ thread outakeThread;
 thread wingThread;
 thread scraperThread;
 thread centerThread;
+thread autonSelectionThread;
 
 void driver() {
     intakeThread = thread(intake);
@@ -41,6 +43,7 @@ int main() {
     R3.setVelocity(100, percent);
     Intake.setVelocity(100, percent);
     Outake.setVelocity(100, percent);
+    autonSelectionThread = thread(autonSelection);
     
     competition Competition = competition();
     Competition.drivercontrol(driver);
