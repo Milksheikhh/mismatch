@@ -34,7 +34,7 @@ Fill in details for each subsystem below.
  	- Components: 1 motor (200 rpm), 1 optical/color sensor for matchload sensing
  	- Notes: Sensor is used to detect matchloads and stop intake when a game object is secured; tune sensor placement and debounce timing as needed.
 
- - **Outake / Shooter**
+ - **Outake**
  	- Components: 1 motor (200 rpm) and 1 optical/color sensor for color-based sorting
  	- Notes: Optical sensor is used to sort by color; outake will eject opposing team colored game objects and run normally for correctly colored ones.
 
