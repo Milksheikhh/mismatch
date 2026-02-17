@@ -86,7 +86,7 @@ Describe controller button mappings. Example:
 	- `AutonOpticalSensor` — PORT19 (used in autonomous routines for color detection)
 
 Notes:
-- `Outake` motor is instantiated with reversed polarity in software — check `src/globals.cpp` if you need to flip wiring instead.
+- `Outake` motor is instantiated with reversed polarity in software — check `src/globals.cpp` if you need to reverse motor instead.
 - Update port numbers here if the wiring changes on the robot.
 
 
