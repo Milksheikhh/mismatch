@@ -8,11 +8,12 @@ extern std::string Team;
 
 const char* getAutonName(int num) {
     switch(num) {
-        case 1: return "Right Long Goal";
-        case 2: return "Left Long Goal";
-        case 3: return "Right Short Goal";
-        case 4: return "Left Short Goal";
-        case 5: return "Skills";
+        case 1: return "Left LG Only";
+        case 2: return "Right LG Only";
+        case 3: return "Left LG+ML";
+        case 4: return "Right LG+ML";
+        case 5: return "Left TMG+LG+ML";
+        case 6: return "Right BMG+LG+ML";
         default: return "Unknown";
     }
 }
@@ -23,15 +24,13 @@ void autonSelection() {
     controller_1.Screen.print("%d: %s", AutonRout, getAutonName(AutonRout));
     controller_1.Screen.setCursor(2, 1);
     controller_1.Screen.print("Team: %s", Team.c_str());
-    controller_1.Screen.setCursor(3, 1);
-    controller_1.Screen.print("L/R=auton U/D=team B=lock");
     
     while (true) {
         bool change = false;
 
         if (controller_1.ButtonLeft.pressing()) {
             AutonRout--;
-            if (AutonRout < 1) AutonRout = 5;
+            if (AutonRout < 1) AutonRout = 6;
             change = true;
             while (controller_1.ButtonLeft.pressing()) {
                 wait(10, msec);
@@ -40,7 +39,7 @@ void autonSelection() {
         
         if (controller_1.ButtonRight.pressing()) {
             AutonRout++;
-            if (AutonRout > 5) AutonRout = 1;
+            if (AutonRout > 6) AutonRout = 1;
             change = true;
             while (controller_1.ButtonRight.pressing()) {
                 wait(10, msec);
@@ -65,8 +64,6 @@ void autonSelection() {
             controller_1.Screen.print("%d: %s", AutonRout, getAutonName(AutonRout));
             controller_1.Screen.setCursor(2, 1);
             controller_1.Screen.print("Team: %s", Team.c_str());
-            controller_1.Screen.setCursor(3, 1);
-            controller_1.Screen.print("L/R=auton U/D=team B=lock");
         }
         
         if (controller_1.ButtonB.pressing()) {

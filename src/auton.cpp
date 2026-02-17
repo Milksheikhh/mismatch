@@ -70,6 +70,9 @@ void autonRoutine() {
         case 5:
             move(12);
             break;
+        case 6:
+            move(12);
+            break;
     }
     
     Auton = false;
