@@ -4,6 +4,12 @@ using namespace vex;
 
 extern motor Intake;
 extern motor Outake;
+extern motor L1;
+extern motor L2;
+extern motor L3;
+extern motor R1;
+extern motor R2;
+extern motor R3;
 extern optical AutonOpticalSensor;
 extern std::string Team;
 extern bool Auton;
@@ -18,45 +24,20 @@ void autonRoutine() {
     Auton = true;
     switch (AutonRout) {
         case 1:
+            L1.setVelocity(25, percent);
+            L2.setVelocity(25, percent);
+            L3.setVelocity(25, percent);
+            R1.setVelocity(25, percent);
+            R2.setVelocity(25, percent);
+            R3.setVelocity(25, percent);
+            move(450);
             Intake.spin(forward);
-            move(24);
-            Intake.stop();
-            rotate(90);
-            move(24);
-            Intake.spin(reverse);
             wait(1, seconds);
-            Intake.stop();
-            rotate(180);
-            move(24);
-            rotate(-90);
-            move(24);
-            while (true) {
-                Intake.spin(forward);
-                double hue = AutonOpticalSensor.hue();
-                
-                if (Team == "blue" && (hue < 35 || hue > 350)) {
-                    Intake.stop();
-                    break;
-                } else if (Team == "red" && (hue > 200 && hue < 260)) {
-                    Intake.stop();
-                    break;
-                }
-                wait(5, msec);
-            }
-            move(-12);
-            Intake.spin(forward);
-            AutonOutake = true;
-            while (true) {
-                if (Outake.isSpinning() == false) {
-                    break;
-                }
-            }
-            move(12);
-            move(-12);
+            move(100);
+            wait(1, seconds);
             break;
 
         case 2:
-            move(12);
             break;
             
         case 3:
