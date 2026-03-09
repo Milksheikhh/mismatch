@@ -27,7 +27,7 @@ Fill in details for each subsystem below.
 
  - **Chassis / Drive**
  	- Components: 6-motor tank drive (see `src/globals.cpp` for motor ports)
- 	- Gear ratio: 60:36 driven by 600 RPM V5 motors → drivetrain effective ~450 RPM
+ 	- Gear ratio: 60:36 driven by 600 RPM V5 motors → drivetrain effective ~360 RPM
  	- Wheel size: 3.25" diameter
 
  - **Intake**
